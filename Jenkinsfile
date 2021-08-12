@@ -25,7 +25,7 @@ pipeline {
     
         stage('Production') {
             steps {
-                echo 'This is the release Confirmation Stage'
+                echo 'This is the Production release Confirmation Stage'
             }
         }
     }
