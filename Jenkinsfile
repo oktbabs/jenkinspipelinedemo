@@ -21,7 +21,12 @@ pipeline {
                 echo 'This is the release Confirmation Stage'
             }
         }
-    
+           stage('push to nexus') {
+            steps {
+                echo 'This is the push to Nexus Stage'
+                
+            }
+        } 
         stage('Production') {
             steps {
                 echo 'This is the Production release Confirmation Stage'
