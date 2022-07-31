@@ -23,7 +23,16 @@ pipeline {
         }
            stage('push to nexus') {
             steps {
-                echo 'This is the push to Nexus Stage'
+                sh ''' echo "This is the push to Nexus Stage"
+                 nexusArtifactUploader credentialsId: 'NEXUS_SYSTEM', 
+                 groupId: 'teegroup', 
+                 nexusUrl: 'jenkinserver.mycompany.com:8081', 
+                 nexusVersion: 'nexus3', 
+                 protocol: 'http', 
+                 repository: 'timmyfirstnexus', 
+                 version: 'OSS 3.34.0-01'
+                '''
+                
                 
             }
         } 
